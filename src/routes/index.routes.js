@@ -49,5 +49,17 @@ router.post('/edit/:id',async(req,res)=>{
         console.log(error);
     }
 });
+
+
+router.get('/delete/:id',async(req,res)=>{
+    try{
+        const {id}=req.params;
+        await task.findByIdAndDelete(id);
+        res.redirect('/');
+    }catch(error){
+        console.log(error);
+    }
+    
+});
 export default router;
 
