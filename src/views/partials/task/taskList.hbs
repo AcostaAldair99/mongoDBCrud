@@ -10,12 +10,17 @@
     <tbody>
         {{#each tasks}}
         <tr>
-            <th>{{@index}}</th>
-            <th>{{title}}</th>
-            <th>{{description}}</th>
-            <th><a href="/edit/{{_id}}">Edit</a>
-            <a href="/delete/{{_id}}">Delete</a>
-            <button>Done</button></th>
+            <td>{{@index}}</td>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td><a href="/edit/{{_id}}">Edit</a>
+            <a href="/delete/{{_id}}">Delete</ag>
+            {{# if done}}
+                <a href="/toogleDone/{{_id}}">Undone</a>
+            {{else}}
+                <a href="/toogleDone/{{_id}}">Done</a>
+            {{/if}}
+            </td>
         </tr>
         {{/each}}
     </tbody>
