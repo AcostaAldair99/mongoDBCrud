@@ -1,15 +1,28 @@
-<form action="/edit/{{tarea._id}}" method="post">
-<div>
-<label for="title">Escribe un titulo:</label>
-<input type="text" name="title" placeholder="Title" value="{{tarea.title}}">
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card card-body p-4 rounded-0 bg-dark text-white">
+                <form action="/edit/{{tarea._id}}" method="post">
+                    <div class="mb-3">
+                        <label for="title">Escribe un titulo:</label>
+                        <input type="text" name="title" class="form-control rounded-0" placeholder="Title" value="{{tarea.title}}">
+                    </div>
+            
+                    <div class="mb-3">
+                        <label class="form-label" for="description">Agrega una descripcion:</label>
+                        <textarea name="description" class="form-control rounded-0 " rows=3
+                            placeholder="Description">{{tarea.description}}</textarea>
+                    </div>
+            
+                    <button class="btn btn-success">Editar</button>
+            
+            
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
 </div>
-
-<div>
-<label for="description">Agrega una descripcion:</label>
-<textarea name="description" placeholder="Description">{{tarea.description}}</textarea>
-</div>
-
-<button>Editar</button>
-
-
-</form>

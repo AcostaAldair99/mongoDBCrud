@@ -1,27 +1,33 @@
-<table>
-    <thead>
-        <tr>
-            <th>No.#</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Operations</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each tasks}}
-        <tr>
-            <td>{{@index}}</td>
-            <td>{{title}}</td>
-            <td>{{description}}</td>
-            <td><a href="/edit/{{_id}}">Edit</a>
-            <a href="/delete/{{_id}}">Delete</ag>
-            {{# if done}}
-                <a href="/toogleDone/{{_id}}">Undone</a>
-            {{else}}
-                <a href="/toogleDone/{{_id}}">Done</a>
-            {{/if}}
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+{{#if tasks}}
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>No.#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tasks}}
+            <tr>
+                <td>{{@index}}</td>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td><a class="btn btn-warning"href="/edit/{{_id}}">Edit</a>
+                <a class="btn btn-danger" href="/delete/{{_id}}">Delete</a>
+                {{# if done}}
+                    <a class="btn btn-secondary" href="/toogleDone/{{_id}}">Undone</a>
+                {{else}}
+                    <a class="btn btn-success" href="/toogleDone/{{_id}}">Done</a>
+                {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+        {{else}}
+            <div class="text-center">
+                <h2>No tasks</h2>
+            </div>
+{{/if}}
